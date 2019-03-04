@@ -14,36 +14,23 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
-public class AppTest{
+public class AppTest extends BaseTest{
 	
-	public WebDriver driver;
+	
 	
   @Test
   public void googletest() throws InterruptedException 
   {
 	
-	//AppPage apppage = PageFactory.initElements(driver, AppPage.class);
-	//driver.navigate().to("https://www.google.com");
-	AppPage apppage =new AppPage();
-	
+	reportLog("Navigate to Google");
 	apppage.navigateToGoole();
 	
+	reportLog("Enter Wedding Keyword");
 	apppage.enterAnyKeyInGoogleSearch("wedding");
-
+	
+	reportLog("Select all options in list and assert that all option contain search keyword");
 	apppage.storeAllOptionsInListAndAssertKey("wedding");
   }
-	  @BeforeClass
-  public void beforeClass() {
-	  
-	  WebDriverManager.chromedriver().setup();
-      driver = new ChromeDriver();
-      driver.manage().window().maximize();
-	  
-  }
 
-  @AfterClass
-  public void afterClass() {
-	  driver.quit();
-  }
 
 }

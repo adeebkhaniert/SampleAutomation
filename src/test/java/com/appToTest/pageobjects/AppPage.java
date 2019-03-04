@@ -14,9 +14,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class AppPage{
+import com.appToTest.framework.BasePage;
+
+public class AppPage extends BasePage{
 	
-	public WebDriver driver;
+	public AppPage(WebDriver driver) {
+		super(driver);
+	}
 	
 	@FindBy(xpath = "//input[@name='q']")
 	private WebElement GoogleSearchField;
