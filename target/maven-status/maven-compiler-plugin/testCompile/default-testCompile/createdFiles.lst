@@ -1,0 +1,3 @@
+com\appToTest\framework\BaseTest.class
+com\appToTest\pageobjects\AppPage.class
+com\appToTest\testscripts\AppTest.class
