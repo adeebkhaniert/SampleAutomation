@@ -22,21 +22,10 @@ public abstract class BaseTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
 	private static final String BREAK_LINE = "</br>";
-	/*
-	 * protected String userName; protected String password; protected String
-	 * browserType; //private WebDriver driver; protected String applicationUrl;
-	 * 
-	 * // pages object initialization protected LoginPage loginPage; protected
-	 * DashboardPage dashBoardPage;
-	 * 
-	 * enum DriverType { Firefox, IE, Chrome }
-	 */
+	
 
 	protected AppPage apppage;
-	/*
-	 * public BaseTest(String browser) { this.browserType = browser; }
-	 */
-
+	
 	
 
 	@BeforeTest
@@ -49,7 +38,7 @@ public abstract class BaseTest {
 	    
 		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 		Thread.sleep(4000);
-		
+		//define page object classes
 		apppage = PageFactory.initElements(getWebDriver(), AppPage.class);
 		
 	}
@@ -57,12 +46,9 @@ public abstract class BaseTest {
 
 	@AfterSuite
 	public void tearDownSuite() {
-		//reporter.endReport();
 		driver.quit();
 	}
-	/*
-	 * @AfterSuite public void tearDownSuite() { // reporter.endReport(); }
-	 */
+	
 
 	public WebDriver getWebDriver() {
 		return driver;
@@ -71,7 +57,6 @@ public abstract class BaseTest {
 
 
 	public void reportLog(String message) {
-		// test.log(LogStatus.INFO, message);
 		message = BREAK_LINE + message;
 		logger.info("Message: " + message);
 		Reporter.log(message);

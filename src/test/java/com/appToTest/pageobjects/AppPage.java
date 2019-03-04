@@ -25,15 +25,6 @@ public class AppPage extends BasePage{
 	@FindBy(xpath = "//input[@name='q']")
 	private WebElement GoogleSearchField;
 
-	@FindBy(xpath = "//ul[@role='listbox']")
-	private WebElement registerButton;
-
-	
-
-	@FindBy(xpath = "//i[@class='caret pull-right']")
-	private List<WebElement> selectDropDownIcon;
-
-	
 
 	public void navigateToGoole(){
 		driver.get("https://www.google.com");
